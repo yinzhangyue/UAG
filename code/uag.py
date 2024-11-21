@@ -71,7 +71,7 @@ class UAG:
             self.metric = GSM8K_Metric()
         elif self.task == "AQuA":
             self.metric = AQuA_Metric()
-        elif self.task == "AQuA":
+        elif self.task == "CSQA":
             self.metric = CSQA_Metric()
         elif self.task == "StrategyQA":
             self.metric = StrategyQA_Metric()
