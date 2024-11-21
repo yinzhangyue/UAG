@@ -1,7 +1,7 @@
 # Reasoning in Flux: Enhancing Large Language Models Reasoning through Uncertainty-aware Adaptive Guidance
 
 ![License](https://img.shields.io/badge/License-Apache%20License%202.0-green)
-![Python](https://img.shields.io/badge/python-3.7+-blue.svg)
+![Python](https://img.shields.io/badge/python-3.11+-blue.svg)
 
 ACL 2024: [Reasoning in Flux: Enhancing Large Language Models Reasoning through Uncertainty-aware Adaptive Guidance](https://aclanthology.org/2024.acl-long.131/)
 
