@@ -7,7 +7,7 @@ ACL 2024: [Reasoning in Flux: Enhancing Large Language Models Reasoning through 
 
 ## Introduction 📝
 
-This repository contains the code and data related to the paper "[Reasoning in Flux: Enhancing Large Language Models Reasoning through Uncertainty-aware Adaptive Guidance](https://aclanthology.org/2024.acl-long.131.pdf)". In this paper, we delve into the underlying factors contributing to reasoning errors in Large Language Models (LLMs) and introduce **Uncertainty-aware Adaptive Guidance (UAG)**, a novel approach for guiding LLM reasoning onto an accurate and reliable trajectory.
+This repository contains the code related to the paper "[Reasoning in Flux: Enhancing Large Language Models Reasoning through Uncertainty-aware Adaptive Guidance](https://aclanthology.org/2024.acl-long.131.pdf)". In this paper, we delve into the underlying factors contributing to reasoning errors in Large Language Models (LLMs) and introduce **Uncertainty-aware Adaptive Guidance (UAG)**, a novel approach for guiding LLM reasoning onto an accurate and reliable trajectory.
 
 ![Cover](figures/architecture.png)
 
@@ -24,21 +24,15 @@ This repository contains the code and data related to the paper "[Reasoning in F
 ## Requirements 📚
 
 Please make sure you have the following requirements installed:
-
-```python
-import json
-from collections import defaultdict
-import torch
-import torch.nn.functional as F
-from transformers import AutoModel, AutoModelForCausalLM, AutoTokenizer
-from sklearn.cluster import KMeans
-import numpy as np
-from tqdm import tqdm
-```
+- transformers >= 4.46.2
+- torch
+- numpy
+- sklearn
+- tqdm
 
 ## Data 💾 
 
-Our dataset originates from [Large Language Models are Zero-Shot Reasoners](https://github.com/kojima-takeshi188/zero_shot_cot/tree/main/dataset), generously shared by Takeshi Kojima. We employ prompts from [Chain-of-Thought Prompting Elicits Reasoning in Large Language Models](https://arxiv.org/pdf/2201.11903.pdf) to guide models in generating initial reasoning processes.
+Our dataset originates from [Large Language Models are Zero-Shot Reasoners](https://github.com/kojima-takeshi188/zero_shot_cot/tree/main/dataset), generously shared by Takeshi Kojima. We select prompts from [Chain-of-Thought Prompting Elicits Reasoning in Large Language Models](https://arxiv.org/pdf/2201.11903.pdf) to guide models in generating initial reasoning processes.
 
 ## Quick Start 🚀
 
@@ -108,14 +102,11 @@ To help you better understand and utilize the script, here is a detailed explana
 
 ### Tips
 
-1. **Open-Source Embedding Model**:  
-   We use the open-source embedding model ["nvidia/NV-Embed-v2"](https://huggingface.co/nvidia/NV-Embed-v2), which eliminates the cost overhead associated with paid embedding models. We have found that this embedding model has good consistency with the Mistral model.
+1. We use the open-source embedding model ["nvidia/NV-Embed-v2"](https://huggingface.co/nvidia/NV-Embed-v2), which eliminates the cost overhead associated with paid embedding models. We have found that this embedding model has good consistency with the Mistral model.
 
-2. **Custom Prompts**:  
-   In [prompt.py](code/prompt.py), we provide some prompt examples. We recommend constructing diverse and high-quality demonstrations for different tasks. You can specify `--demonstration-path` to further expand task-specific prompts.
+2. In [prompt.py](code/prompt.py), we provide some prompt examples. We recommend constructing diverse and high-quality demonstrations for different tasks. You can specify `--demonstration-path` to further expand task-specific prompts.
 
-3. **Adapting UAG to New Tasks**:  
-   You can adapt UAG to new reasoning tasks and scenarios by modifying the `adaptive_reasoning_adjustment` function in `uag.py`. Additionally, you can adjust hyperparameters like `theta`, `lambda1`, `lambda2`, and the generation `temperature` to achieve better performance. You can also customize your uncertainty calculation method; we have provided the `compute_uncertainties` function to facilitate the construction of task-specific uncertainty computation methods.
+3. You can adapt UAG to new reasoning tasks and scenarios by modifying the `adaptive_reasoning_adjustment` function in `uag.py`. Additionally, you can adjust hyperparameters like `theta`, `lambda1`, `lambda2`, and the generation `temperature` to achieve better performance. You can also customize your uncertainty calculation method; we have provided the `compute_uncertainties` function to facilitate the construction of task-specific uncertainty computation methods.
 
 ## Bug or Questions? 🤔
 
