@@ -34,6 +34,9 @@ Please make sure you have the following requirements installed:
 
 Our dataset originates from [Large Language Models are Zero-Shot Reasoners](https://github.com/kojima-takeshi188/zero_shot_cot/tree/main/dataset), generously shared by Takeshi Kojima. We select prompts from [Chain-of-Thought Prompting Elicits Reasoning in Large Language Models](https://arxiv.org/pdf/2201.11903.pdf) to guide models in generating initial reasoning processes.
 
+### Sample Outputs 📋
+We share some outputs of UAG at [Google Drive](https://drive.google.com/drive/folders/10QXlB8dG4m8H39-x6xj7kXq1sLdxO6fO?usp=sharing).
+
 ## Quick Start 🚀
 
 We provide a simple script in [main.py](code/main.py) to launch the GSM8K task using UAG:
